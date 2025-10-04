@@ -62,6 +62,76 @@
             cursor: pointer;
         }
 
+                    /* Mobile Sidebar Styles */
+        .sidebar-mobile {
+            display: none;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            font-size: 1.5rem;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            .sidebar {
+                display: none !important;
+            }
+            
+            .sidebar-mobile {
+                display: block;
+                position: fixed;
+                top: 0;
+                left: -280px;
+                width: 280px;
+                height: 100vh;
+                background: var(--primary-color);
+                color: white;
+                z-index: 999;
+                transition: left 0.3s ease;
+                padding-top: 60px;
+            }
+            
+            .sidebar-mobile.active {
+                left: 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .sidebar-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 998;
+            }
+            
+            .sidebar-overlay.active {
+                display: block;
+            }
+            
+            /* Adjust main content for mobile */
+            .col-md-10 {
+                width: 100% !important;
+            }
+        }
+
         /* Security Section Styles */
         .security-status {
             padding: 10px;
@@ -3773,4 +3843,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     </script>
 </body>
+
 </html>
